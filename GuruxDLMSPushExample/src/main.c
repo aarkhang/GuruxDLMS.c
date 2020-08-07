@@ -70,7 +70,7 @@ int closeServer(int* s)
 int connectServer(const char* address, int port, int* s)
 {
     int ret;
-    struct sockaddr_in add;
+    struct sockaddr_in add = { 0 };
     //create socket.
     *s = socket(AF_INET, SOCK_STREAM, IPPROTO_IP);
     if (*s == -1)

@@ -113,7 +113,7 @@ void ListenerThread(void* pVoid)
 {
     int socket;
     connection* con = (connection*)pVoid;
-    struct sockaddr_in add;
+    struct sockaddr_in add = { 0 };
     int ret;
     char tmp[10];
 #if defined(_WIN32) || defined(_WIN64)//If Windows

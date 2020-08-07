@@ -2343,6 +2343,7 @@ void ListenerThread(void* pVoid)
             //socket listen failed.
             return;
         }
+        memset(&client, 0, sizeof(client));
         len = sizeof(client);
         socket1 = accept(ls, (struct sockaddr*)&client, &len);
         while (1)

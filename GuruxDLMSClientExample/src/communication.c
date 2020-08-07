@@ -50,7 +50,7 @@ void time_now(gxtime* value)
 int com_makeConnect(connection* connection, const char* address, int port)
 {
     int ret;
-    struct sockaddr_in add;
+    struct sockaddr_in add = { 0 };
     //create socket.
     connection->socket = socket(AF_INET, SOCK_STREAM, IPPROTO_IP);
     if (connection->socket == -1)

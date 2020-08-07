@@ -598,27 +598,27 @@ int addInstantDataProfileGeneric(
         arr_push(&instantData.captureObjects, key_init(&apparentPower, co_init(2, 0)));
     }
 
-    //Signed active power, kW (+ Forward; – Reverse)
+    //Signed active power, kW (+ Forward; - Reverse)
     {
         const unsigned char ln[6] = { 1,0,1,7,0,255 };
         cosem_init2((gxObject*)&signedActivePower, DLMS_OBJECT_TYPE_REGISTER, ln);
         arr_push(&instantData.captureObjects, key_init(&signedActivePower, co_init(2, 0)));
     }
 
-    //Signed reactive power, kvar (+ Lag; – Lead)
+    //Signed reactive power, kvar (+ Lag; - Lead)
     {
         const unsigned char ln[6] = { 1,0,37,7,0,255 };
         cosem_init2((gxObject*)&signedReactivePower, DLMS_OBJECT_TYPE_REGISTER, ln);
         arr_push(&instantData.captureObjects, key_init(&signedReactivePower, co_init(2, 0)));
     }
 
-    //Number of power — failures
+    //Number of power - failures
     {
         const unsigned char ln[6] = { 0,0,96,7,0,255 };
         cosem_init2((gxObject*)&numberOfPowerFailures, DLMS_OBJECT_TYPE_REGISTER, ln);
         arr_push(&instantData.captureObjects, key_init(&numberOfPowerFailures, co_init(2, 0)));
     }
-    //Cumulative power — failure duration.
+    //Cumulative power - failure duration.
     {
         const unsigned char ln[6] = { 0,0,94,91,8,255 };
         cosem_init2((gxObject*)&cumulativePowerFailureDuration, DLMS_OBJECT_TYPE_REGISTER, ln);
@@ -2320,7 +2320,7 @@ int connectServer(
     int* s)
 {
     int ret;
-    struct sockaddr_in add;
+    struct sockaddr_in add = { 0 };
     //create socket.
     *s = socket(AF_INET, SOCK_STREAM, IPPROTO_IP);
     if (*s == -1)

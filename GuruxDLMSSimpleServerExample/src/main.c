@@ -518,6 +518,7 @@ int main(int argc, char* argv[])
             //socket listen failed.
             return -1;
         }
+        memset(&client, 0, sizeof(client));
         len = sizeof(client);
         s = accept(ls, (struct sockaddr*) & client, &len);
         while (1)

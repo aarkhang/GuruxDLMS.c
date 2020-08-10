@@ -4,15 +4,21 @@ project(GuruxDLMS_lib VERSION 1.0
                   DESCRIPTION "Gurux DLMS library"
                   LANGUAGES C)
 
-set(TARGET gurux_dlms_c)
+set(TARGET1 gurux_dlms_c)
+set(TARGET2 gurux_dlms_micro)
 
-add_library(${TARGET} STATIC )
+add_library(${TARGET1} STATIC )
+add_library(${TARGET2} STATIC )
 
 #Add this if used on microcontroller: GX_DLMS_MICROCONTROLLER
 #Add this if you don't want to use malloc: DLMS_IGNORE_MALLOC
 #Add this if you don't want to use object pointers: DLMS_IGNORE_OBJECT_POINTERS
 #Add this if you want to use EPOC time: DLMS_USE_EPOCH_TIME
-target_compile_definitions(${TARGET} PRIVATE
+target_compile_definitions(${TARGET2} PRIVATE
+  GX_DLMS_MICROCONTROLLER
+  DLMS_USE_EPOCH_TIME
+  DLMS_IGNORE_CLIENT
+  DLMS_IGNORE_MALLOC
 )
 
 if(CMAKE_COMPILER_IS_GNUCXX)
@@ -101,7 +107,12 @@ set (TARGET_HEADERS
     include/gxmem.h
 )
 
-target_sources( ${TARGET} PRIVATE
+target_sources( ${TARGET1} PRIVATE
+     ${TARGET_SOURCES}
+     ${TARGET_HEADERS}
+)
+
+target_sources( ${TARGET2} PRIVATE
      ${TARGET_SOURCES}
      ${TARGET_HEADERS}
 )

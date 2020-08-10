@@ -7,3 +7,6 @@ project(GuruxDLMS VERSION 1.0
 add_subdirectory(development)
 add_subdirectory(GuruxDLMSServerExample)
 add_subdirectory(GuruxDLMSClientExample)
+add_subdirectory(GuruxDLMSPushExample)
+add_subdirectory(GuruxDLMSSimpleServerExample)
+add_subdirectory(GuruxDLMSServerExample2)

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{A21C14A2-DB31-47F6-8806-F842B42F42F4}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>DLMS</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>GX_DLMS_MICROCONTROLLER;DLMS_USE_EPOCH_TIME;DLMS_IGNORE_CLIENT;DLMS_IGNORE_MALLOC;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>GX_DLMS_MICROCONTROLLER;DLMS_USE_EPOCH_TIME;DLMS_IGNORE_CLIENT;DLMS_IGNORE_MALLOC;WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>GX_DLMS_MICROCONTROLLER;DLMS_USE_EPOCH_TIME;DLMS_IGNORE_CLIENT;DLMS_IGNORE_MALLOC;</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>GX_DLMS_MICROCONTROLLER;DLMS_USE_EPOCH_TIME;DLMS_IGNORE_CLIENT;DLMS_IGNORE_MALLOC;</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\development\src\apdu.c" />
+    <ClCompile Include="..\..\development\src\bitarray.c" />
+    <ClCompile Include="..\..\development\src\bytebuffer.c" />
+    <ClCompile Include="..\..\development\src\ciphering.c" />
+    <ClCompile Include="..\..\development\src\client.c" />
+    <ClCompile Include="..\..\development\src\converters.c" />
+    <ClCompile Include="..\..\development\src\cosem.c" />
+    <ClCompile Include="..\..\development\src\datainfo.c" />
+    <ClCompile Include="..\..\development\src\date.c" />
+    <ClCompile Include="..\..\development\src\dlms.c" />
+    <ClCompile Include="..\..\development\src\dlmsSettings.c" />
+    <ClCompile Include="..\..\development\src\gxaes.c" />
+    <ClCompile Include="..\..\development\src\gxarray.c" />
+    <ClCompile Include="..\..\development\src\gxget.c" />
+    <ClCompile Include="..\..\development\src\gxinvoke.c" />
+    <ClCompile Include="..\..\development\src\gxkey.c" />
+    <ClCompile Include="..\..\development\src\gxmd5.c" />
+    <ClCompile Include="..\..\development\src\gxobjects.c" />
+    <ClCompile Include="..\..\development\src\gxset.c" />
+    <ClCompile Include="..\..\development\src\gxsha1.c" />
+    <ClCompile Include="..\..\development\src\gxsha256.c" />
+    <ClCompile Include="..\..\development\src\gxvalueeventargs.c" />
+    <ClCompile Include="..\..\development\src\helpers.c" />
+    <ClCompile Include="..\..\development\src\message.c" />
+    <ClCompile Include="..\..\development\src\notify.c" />
+    <ClCompile Include="..\..\development\src\objectarray.c" />
+    <ClCompile Include="..\..\development\src\parameters.c" />
+    <ClCompile Include="..\..\development\src\replydata.c" />
+    <ClCompile Include="..\..\development\src\server.c" />
+    <ClCompile Include="..\..\development\src\serverevents.c" />
+    <ClCompile Include="..\..\development\src\variant.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\development\include\apdu.h" />
+    <ClInclude Include="..\..\development\include\bitarray.h" />
+    <ClInclude Include="..\..\development\include\bytebuffer.h" />
+    <ClInclude Include="..\..\development\include\ciphering.h" />
+    <ClInclude Include="..\..\development\include\cipheringenums.h" />
+    <ClInclude Include="..\..\development\include\client.h" />
+    <ClInclude Include="..\..\development\include\converters.h" />
+    <ClInclude Include="..\..\development\include\cosem.h" />
+    <ClInclude Include="..\..\development\include\crc.h" />
+    <ClInclude Include="..\..\development\include\datainfo.h" />
+    <ClInclude Include="..\..\development\include\date.h" />
+    <ClInclude Include="..\..\development\include\dlms.h" />
+    <ClInclude Include="..\..\development\include\dlmssettings.h" />
+    <ClInclude Include="..\..\development\include\enums.h" />
+    <ClInclude Include="..\..\development\include\errorcodes.h" />
+    <ClInclude Include="..\..\development\include\gxaes.h" />
+    <ClInclude Include="..\..\development\include\gxarray.h" />
+    <ClInclude Include="..\..\development\include\gxdefine.h" />
+    <ClInclude Include="..\..\development\include\gxget.h" />
+    <ClInclude Include="..\..\development\include\gxignore.h" />
+    <ClInclude Include="..\..\development\include\gxint.h" />
+    <ClInclude Include="..\..\development\include\gxinvoke.h" />
+    <ClInclude Include="..\..\development\include\gxkey.h" />
+    <ClInclude Include="..\..\development\include\gxmd5.h" />
+    <ClInclude Include="..\..\development\include\gxmem.h" />
+    <ClInclude Include="..\..\development\include\gxobjects.h" />
+    <ClInclude Include="..\..\development\include\gxset.h" />
+    <ClInclude Include="..\..\development\include\gxsha1.h" />
+    <ClInclude Include="..\..\development\include\gxsha256.h" />
+    <ClInclude Include="..\..\development\include\gxvalueeventargs.h" />
+    <ClInclude Include="..\..\development\include\helpers.h" />
+    <ClInclude Include="..\..\development\include\lnparameters.h" />
+    <ClInclude Include="..\..\development\include\message.h" />
+    <ClInclude Include="..\..\development\include\notify.h" />
+    <ClInclude Include="..\..\development\include\objectarray.h" />
+    <ClInclude Include="..\..\development\include\parameters.h" />
+    <ClInclude Include="..\..\development\include\replydata.h" />
+    <ClInclude Include="..\..\development\include\server.h" />
+    <ClInclude Include="..\..\development\include\serverevents.h" />
+    <ClInclude Include="..\..\development\include\snparameters.h" />
+    <ClInclude Include="..\..\development\include\variant.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

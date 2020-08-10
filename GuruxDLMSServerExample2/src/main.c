@@ -41,12 +41,12 @@
 #include <errno.h>
 #endif
 
-#include "../dlms/include/dlmssettings.h"
-#include "../dlms/include/variant.h"
-#include "../dlms/include/cosem.h"
-#include "../dlms/include/server.h"
+#include "dlmssettings.h"
+#include "variant.h"
+#include "cosem.h"
+#include "server.h"
 //Add this if you want to send notify messages.
-#include "../dlms/include/notify.h"
+#include "notify.h"
 
 //DLMS settings.
 dlmsServerSettings settings;

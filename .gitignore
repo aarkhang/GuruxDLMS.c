@@ -246,5 +246,6 @@ GuruxDLMSServerExample2/VS/trace.txt
 *.raw
 
 .vscode/
+.vs/
 build*/
 _build*/
